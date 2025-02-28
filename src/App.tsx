@@ -10,6 +10,7 @@ import { darkTheme, lightTheme } from "./theme/theme";
 import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
 import AppRoute from "./route/AppRoute";
+import Footer from "./components/Footer";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -51,6 +52,7 @@ function App() {
             <AppRoute />
           </Container>
         </Fade>
+        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   );

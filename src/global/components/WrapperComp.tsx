@@ -11,6 +11,7 @@ const WrapperComp: React.FC<WrapperCompProps> = ({ children, sx }) => {
         height: "auto",
         width: "auto",
         paddingX: "20px",
+        pb: "20px",
         ...sx,
       }}
     >

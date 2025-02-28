@@ -50,6 +50,7 @@ export default function Navbar({ isDarkMode, toggleTheme }: NavbarProps) {
     { label: "About", path: "/about" },
     { label: "Projects", path: "/projects" },
     { label: "Contact", path: "/contact" },
+    { label: "CV", path: "/cv" },
   ];
 
   const boxShadow =
