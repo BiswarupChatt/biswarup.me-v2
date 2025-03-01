@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import ProfileImage from "../../../assets/profile-img.jpg";
 import SocialIcon from "../../../global/components/SocialIcon";
 
