@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Divider } from "@mui/material";
+import { Box } from "@mui/material";
 
 import javascript from "../../../assets/icons/js.png";
 import typeScript from "../../../assets/icons/typescript.png";
