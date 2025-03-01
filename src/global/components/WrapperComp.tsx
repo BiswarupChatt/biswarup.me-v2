@@ -9,9 +9,8 @@ const WrapperComp: React.FC<WrapperCompProps> = ({ children, sx }) => {
     <Box
       sx={{
         height: "auto",
-        width: "auto",
-        paddingX: "20px",
-        pb: "20px",
+        width: "100%",
+        p: "20px",
         ...sx,
       }}
     >

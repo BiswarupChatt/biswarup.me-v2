@@ -71,7 +71,7 @@ export default function Navbar({ isDarkMode, toggleTheme }: NavbarProps) {
             left: "0",
             right: "0",
             zIndex: 100,
-            opacity: "0.95",
+            opacity: "0.98",
           }}
         >
           <Toolbar>
@@ -145,7 +145,7 @@ export default function Navbar({ isDarkMode, toggleTheme }: NavbarProps) {
                             sx={{
                               width: "7px",
                               mr: 1,
-                              color: theme.palette.custom.blue,
+                              color: theme.palette.custom.blue.main,
                             }}
                           />
                         )}

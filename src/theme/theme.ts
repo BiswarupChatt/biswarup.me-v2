@@ -1,31 +1,39 @@
 import { createTheme, Theme } from "@mui/material/styles";
 
-// Step 1: Extend the Palette and PaletteOptions interfaces
+// Extend the Palette and PaletteOptions interfaces
 declare module "@mui/material/styles" {
+// Define a custom color type to extend the MUI Palette
+interface CustomPaletteColor {
+  main: string;
+  light?: string;
+  lighter?: string;
+  dark?: string;
+  darker?: string;
+}
   interface Palette {
     custom: {
-      coral: string;
-      blue: string;
-      purple: string;
-      orange: string;
-      teal: string;
-      magenta: string;
+      coral: CustomPaletteColor;
+      blue: CustomPaletteColor;
+      purple: CustomPaletteColor;
+      orange: CustomPaletteColor;
+      teal: CustomPaletteColor;
+      magenta: CustomPaletteColor;
     };
   }
 
   interface PaletteOptions {
     custom?: {
-      coral?: string;
-      blue?: string;
-      purple?: string;
-      orange?: string;
-      teal?: string;
-      magenta?: string;
+      coral?: CustomPaletteColor;
+      blue?: CustomPaletteColor;
+      purple?: CustomPaletteColor;
+      orange?: CustomPaletteColor;
+      teal?: CustomPaletteColor;
+      magenta?: CustomPaletteColor;
     };
   }
 }
 
-// Light mode theme
+
 // Light mode theme
 const lightTheme: Theme = createTheme({
   typography: {
@@ -52,12 +60,48 @@ const lightTheme: Theme = createTheme({
       secondary: "#333333", // Lighter black
     },
     custom: {
-      coral: "#F06292", // Pinkish-coral
-      blue: "#1E44A7", // Mid-tone blue
-      purple: "#AB47BC", // Muted purple
-      orange: "#FF7043", // Terracotta orange
-      teal: "#26A69A", // Teal-ish aqua
-      magenta: "#EC407A", // Bold magenta
+      coral: {
+        main: "#F06292", // Pinkish-coral
+        light: "#F48FB1", // Lighter coral
+        lighter: "#FFBCD9", // Very light coral
+        dark: "#D81B60", // Darker coral
+        darker: "#AD1457", // Very dark coral
+      },
+      blue: {
+        main: "#1E44A7", // Mid-tone blue
+        light: "#4A6BCF", // Lighter blue
+        lighter: "#839BF7", // Very light blue
+        dark: "#162F7A", // Darker blue
+        darker: "#0E1A4D", // Very dark blue
+      },
+      purple: {
+        main: "#AB47BC", // Muted purple
+        light: "#CE93D8", // Lighter purple
+        lighter: "#E1BEE7", // Very light purple
+        dark: "#8E24AA", // Darker purple
+        darker: "#6A1B9A", // Very dark purple
+      },
+      orange: {
+        main: "#FF7043", // Terracotta orange
+        light: "#FF9E7D", // Lighter orange
+        lighter: "#FFCCBC", // Very light orange
+        dark: "#F4511E", // Darker orange
+        darker: "#D84315", // Very dark orange
+      },
+      teal: {
+        main: "#26A69A", // Teal-ish aqua
+        light: "#4DD0E1", // Lighter teal
+        lighter: "#80DEEA", // Very light teal
+        dark: "#00897B", // Darker teal
+        darker: "#00695C", // Very dark teal
+      },
+      magenta: {
+        main: "#EC407A", // Bold magenta
+        light: "#F06292", // Lighter magenta
+        lighter: "#F8BBD0", // Very light magenta
+        dark: "#D81B60", // Darker magenta
+        darker: "#AD1457", // Very dark magenta
+      },
     },
   },
 });
@@ -70,30 +114,66 @@ const darkTheme: Theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#ffffff", // White (inverted from lightTheme primary)
+      main: "#ffffff", // White
       light: "#f5f5f5", // Off-white
       dark: "#e0e0e0", // Greyish white
     },
     secondary: {
-      main: "#000000", // Black (inverted from lightTheme secondary)
-      light: "#333333", // Lighter black (adjusted for consistency)
+      main: "#000000", // Black
+      light: "#333333", // Lighter black
       dark: "#1a1a1a", // Darker black
     },
     background: {
-      default: "#000000", // Black background (inverted from lightTheme)
+      default: "#000000", // Black background
       paper: "#18181b", // Slightly lighter black for paper
     },
     text: {
-      primary: "#ffffff", // White text (matches primary)
-      secondary: "#e0e0e0", // Lighter white (matches primary.dark)
+      primary: "#ffffff", // White text
+      secondary: "#e0e0e0", // Lighter white
     },
     custom: {
-      coral: "#F06292", // Pinkish-coral (unchanged)
-      blue: "#1E44A7", // Mid-tone blue (unchanged)
-      purple: "#AB47BC", // Muted purple (unchanged)
-      orange: "#FF7043", // Terracotta orange (unchanged)
-      teal: "#26A69A", // Teal-ish aqua (unchanged)
-      magenta: "#EC407A", // Bold magenta (unchanged)
+      coral: {
+        main: "#F06292", // Pinkish-coral
+        light: "#F48FB1", // Lighter coral
+        lighter: "#FFBCD9", // Very light coral
+        dark: "#D81B60", // Darker coral
+        darker: "#AD1457", // Very dark coral
+      },
+      blue: {
+        main: "#1E44A7", // Mid-tone blue
+        light: "#4A6BCF", // Lighter blue
+        lighter: "#839BF7", // Very light blue
+        dark: "#162F7A", // Darker blue
+        darker: "#0E1A4D", // Very dark blue
+      },
+      purple: {
+        main: "#AB47BC", // Muted purple
+        light: "#CE93D8", // Lighter purple
+        lighter: "#E1BEE7", // Very light purple
+        dark: "#8E24AA", // Darker purple
+        darker: "#6A1B9A", // Very dark purple
+      },
+      orange: {
+        main: "#FF7043", // Terracotta orange
+        light: "#FF9E7D", // Lighter orange
+        lighter: "#FFCCBC", // Very light orange
+        dark: "#F4511E", // Darker orange
+        darker: "#D84315", // Very dark orange
+      },
+      teal: {
+        main: "#26A69A", // Teal-ish aqua
+        light: "#4DD0E1", // Lighter teal
+        lighter: "#80DEEA", // Very light teal
+        dark: "#00897B", // Darker teal
+        darker: "#00695C", // Very dark teal
+      },
+      magenta: {
+        main: "#EC407A", // Bold magenta
+        light: "#F06292", // Lighter magenta
+        lighter: "#F8BBD0", // Very light magenta
+        dark: "#D81B60", // Darker magenta
+        darker: "#AD1457", // Very dark magenta
+      },
     },
   },
 });
