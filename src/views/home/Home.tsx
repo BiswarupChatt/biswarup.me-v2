@@ -57,7 +57,7 @@ export default function Home() {
             My CV
           </Button>
         </Box>
-        <Box sx={{ ml: 2 }}>
+        <Box>
           <IconButton color="primary">
             <LinkedInIcon />
           </IconButton>
