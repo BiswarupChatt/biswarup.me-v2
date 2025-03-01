@@ -2,6 +2,7 @@ import WrapperComp from "../../global/components/WrapperComp";
 import Hero from "./comopnents/Hero";
 import InfiniteScroll from "./comopnents/InfiniteScroll";
 import ContactMe from "./comopnents/ContactMe";
+import AboutMe from "./comopnents/AboutMe";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </WrapperComp>
       <InfiniteScroll />
       <WrapperComp>
+        <AboutMe />
         <ContactMe />
       </WrapperComp>
     </>

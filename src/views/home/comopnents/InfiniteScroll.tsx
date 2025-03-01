@@ -137,7 +137,6 @@ const InfiniteScroll: React.FC = () => {
         padding: "16px 0",
       }}
     >
-      <Divider sx={{ mb: 2, width: "90vw", mx: "auto" }} />
       <Box
         ref={scrollRef}
         sx={{
@@ -155,7 +154,6 @@ const InfiniteScroll: React.FC = () => {
           <TechCard key={item.id} item={item} />
         ))}
       </Box>
-      <Divider sx={{ mt: 2, width: "90vw", mx: "auto" }} />
     </Box>
   );
 };

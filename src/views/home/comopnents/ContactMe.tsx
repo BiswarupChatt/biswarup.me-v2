@@ -1,6 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import ButtonComp from "../../../global/components/ButtonComp";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactMe() {
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -48,18 +51,9 @@ export default function ContactMe() {
         >
           Let’s create your <br /> next big idea.
         </Typography>
-        <Button
-          variant="contained"
-          sx={{
-            borderRadius: "20px",
-            fontWeight: "bold",
-            "&:hover": {
-              backgroundColor: (theme) => theme.palette.primary.dark,
-            },
-          }}
-        >
+        <ButtonComp variant="contained" onClick={() => navigate("/contact")}>
           Contact Me
-        </Button>
+        </ButtonComp>
       </Box>
     </>
   );

@@ -3,6 +3,7 @@ import ProfileImage from "../../../assets/profile-img.jpg";
 import SocialIcon from "../../../global/components/SocialIcon";
 
 import { useNavigate } from "react-router-dom";
+import ButtonComp from "../../../global/components/ButtonComp";
 
 export default function Hero() {
   const navitage = useNavigate();
@@ -25,37 +26,15 @@ export default function Hero() {
         you— all with clean code and awesome design.
       </Typography>
       <Box sx={{ display: "flex", gap: 1, mt: 2, alignItems: "center" }}>
-        <Button
-          variant="contained"
-          onClick={() => navitage("/about")}
-          sx={{
-            minWidth: "100px",
-            my: 2,
-            fontWeight: "bold",
-          }}
-        >
-          Know More About Me
-        </Button>
-        <Button
+        <SocialIcon />
+        <ButtonComp
           variant="outlined"
-          sx={{
-            minWidth: "150px",
-            my: 2,
-            fontWeight: "bold",
-            borderColor: "primary.main",
-            color: "primary.main",
-            "&:hover": {
-              backgroundColor: "primary.main",
-              color: (theme) => theme.palette.background.default,
-              borderColor: "transparent",
-              transition: "all 0.3s ease",
-            },
-          }}
+          sx={{ minWidth: "150px" }}
+          onClick={() => navitage("/cv")}
         >
           My CV
-        </Button>
+        </ButtonComp>
       </Box>
-      <SocialIcon />
     </>
   );
 }
