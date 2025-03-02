@@ -1,8 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import ButtonComp from "../../../global/components/ButtonComp";
 import { useNavigate } from "react-router-dom";
+import ButtonComp from "./ButtonComp";
 
-export default function ContactMe() {
+export default function ContactComp() {
   const navigate = useNavigate();
   return (
     <>
@@ -49,7 +49,8 @@ export default function ContactMe() {
             mb: 3,
           }}
         >
-          Let’s create your <br /> next big idea.
+          Ready to spark your <br />
+          next game-changing idea?
         </Typography>
         <ButtonComp variant="contained" onClick={() => navigate("/contact")}>
           Contact Me

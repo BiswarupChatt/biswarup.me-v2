@@ -78,7 +78,7 @@ export default function Experience() {
   const displayedExperiences = showAll ? experiences : experiences.slice(0, 3);
 
   return (
-    <Box sx={{ mt: 5, display: "flex", flexDirection: "column" }}>
+    <Box sx={{ my: 5, display: "flex", flexDirection: "column" }}>
       {/* Header */}
       <Box
         sx={{
