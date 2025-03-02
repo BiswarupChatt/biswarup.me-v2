@@ -27,13 +27,13 @@ export default function AboutMe() {
           About Me
         </Typography>
       </Box>
-      <Typography variant="h6">
+      <Typography variant="h6" textAlign="justify">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
         consectetur laudantium eveniet beatae eum doloremque iure libero nemo,
         magnam ea earum asperiores repellat, quisquam expedita dicta. Blanditiis
         maxime delectus vero! laudantium eveniet beatae eum doloremque iure
         libero nemo, magnam ea earum asperiores repellat, quisquam expedita
-        dicta. Blanditiis maxime delectus vero! 
+        dicta. Blanditiis maxime delectus vero!
       </Typography>
       <Box sx={{ mx: "auto", mt: 2 }}>
         <ButtonComp variant="outlined" onClick={() => navigate("/about")}>

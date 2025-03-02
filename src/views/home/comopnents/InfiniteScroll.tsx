@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Box } from "@mui/material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import javascript from "../../../assets/icons/js.png";
 import typeScript from "../../../assets/icons/typescript.png";
@@ -16,6 +18,7 @@ import bootstrap from "../../../assets/icons/bootstrap.png";
 import vercel from "../../../assets/icons/vercel.png";
 import postman from "../../../assets/icons/postman.png";
 import TanStack from "../../../assets/icons/TanStack.png";
+import Slider from "react-slick";
 
 interface TechItem {
   id: number;
@@ -69,91 +72,34 @@ const TechCard: React.FC<{ item: TechItem }> = ({ item }) => (
     <img
       src={item.icon}
       alt={item.name}
-      style={{
-        marginRight: 8,
-        // height: "15px",
-        width: "15px",
-      }}
+      style={{ marginRight: 8, width: "15px" }}
     />
     {item.name}
   </Box>
 );
 
 const InfiniteScroll: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Duplicate items three times for smooth looping
-  const loopedItems: TechItem[] = [
-    ...techItems,
-    ...techItems,
-    ...techItems,
-  ].map((item, index) => ({
-    ...item,
-    id: index + 1,
-  }));
-
-  // Calculate the width of one complete set of items
-  const singleSetWidth = techItems.length * 136; // 120px width + 16px total margin
-
-  // Infinite scroll effect
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let animationFrameId: number;
-    const scrollSpeed = 1; // Adjust speed here
-
-    const animateScroll = () => {
-      if (!scrollContainer) return;
-
-      // Increment scroll position
-      scrollContainer.scrollLeft += scrollSpeed;
-
-      // When reaching the end of first set, reset to start
-      if (scrollContainer.scrollLeft >= singleSetWidth) {
-        scrollContainer.scrollLeft -= singleSetWidth;
-      }
-
-      // Continue animation
-      animationFrameId = requestAnimationFrame(animateScroll);
-    };
-
-    // Start animation
-    animationFrameId = requestAnimationFrame(animateScroll);
-
-    // Cleanup
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-    };
-  }, [singleSetWidth]);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 5000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    pauseOnHover: false,
+    arrows: false,
+    variableWidth: true, 
+  };
 
   return (
-    <Box
-      sx={{
-        width: "95vw",
-        overflow: "hidden",
-        padding: "16px 0",
-      }}
-    >
-      <Box
-        ref={scrollRef}
-        sx={{
-          display: "flex",
-          overflowX: "hidden",
-          whiteSpace: "nowrap",
-          scrollBehavior: "smooth",
-          padding: "0 16px",
-          "&::-webkit-scrollbar": { display: "none" },
-          msOverflowStyle: "none",
-          scrollbarWidth: "none",
-        }}
-      >
-        {loopedItems.map((item) => (
+    <Box sx={{ width: "95vw", overflow: "hidden", padding: "16px 0" }}>
+      <Slider {...settings}>
+        {techItems.map((item) => (
           <TechCard key={item.id} item={item} />
         ))}
-      </Box>
+      </Slider>
     </Box>
   );
 };
