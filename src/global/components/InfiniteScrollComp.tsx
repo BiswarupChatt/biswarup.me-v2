@@ -3,21 +3,21 @@ import { Box } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import javascript from "../../../assets/icons/js.png";
-import typeScript from "../../../assets/icons/typescript.png";
-import reactjs from "../../../assets/icons/react.png";
-import redux from "../../../assets/icons/redux.png";
-import nodejs from "../../../assets/icons/nodejs.png";
-import expressjs from "../../../assets/icons/expressjs.png";
-import mongodb from "../../../assets/icons/mongodb.png";
-import html5 from "../../../assets/icons/html5.png";
-import css from "../../../assets/icons/css.png";
-import tailwind from "../../../assets/icons/tailwind.png";
-import materialUi from "../../../assets/icons/material-ui.png";
-import bootstrap from "../../../assets/icons/bootstrap.png";
-import vercel from "../../../assets/icons/vercel.png";
-import postman from "../../../assets/icons/postman.png";
-import TanStack from "../../../assets/icons/TanStack.png";
+import javascript from "../../assets/icons/js.png";
+import typeScript from "../../assets/icons/typescript.png";
+import reactjs from "../../assets/icons/react.png";
+import redux from "../../assets/icons/redux.png";
+import nodejs from "../../assets/icons/nodejs.png";
+import expressjs from "../../assets/icons/expressjs.png";
+import mongodb from "../../assets/icons/mongodb.png";
+import html5 from "../../assets/icons/html5.png";
+import css from "../../assets/icons/css.png";
+import tailwind from "../../assets/icons/tailwind.png";
+import materialUi from "../../assets/icons/material-ui.png";
+import bootstrap from "../../assets/icons/bootstrap.png";
+import vercel from "../../assets/icons/vercel.png";
+import postman from "../../assets/icons/postman.png";
+import TanStack from "../../assets/icons/TanStack.png";
 import Slider from "react-slick";
 
 interface TechItem {
@@ -78,7 +78,7 @@ const TechCard: React.FC<{ item: TechItem }> = ({ item }) => (
   </Box>
 );
 
-const InfiniteScroll: React.FC = () => {
+const InfiniteScrollComp: React.FC = () => {
   const settings = {
     dots: false,
     infinite: true,
@@ -90,7 +90,7 @@ const InfiniteScroll: React.FC = () => {
     cssEase: "linear",
     pauseOnHover: false,
     arrows: false,
-    variableWidth: true, 
+    variableWidth: true,
   };
 
   return (
@@ -104,4 +104,4 @@ const InfiniteScroll: React.FC = () => {
   );
 };
 
-export default InfiniteScroll;
+export default InfiniteScrollComp;

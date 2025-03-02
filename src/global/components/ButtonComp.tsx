@@ -19,6 +19,7 @@ interface ButtonCompProps extends ButtonProps {
   tooltip?: string;
   fullWidth?: boolean;
   testId?: string;
+  target?: string;
   variant?: "contained" | "outlined" | "text";
   disabledStyle?: React.CSSProperties;
   borderRadius?: string;
@@ -33,6 +34,7 @@ const ButtonComp: React.FC<ButtonCompProps> = ({
   tooltip,
   fullWidth = false,
   testId,
+  target,
   variant = "contained",
   disabledStyle,
   sx,

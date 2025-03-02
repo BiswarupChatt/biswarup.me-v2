@@ -1,8 +1,8 @@
 import WrapperComp from "../../global/components/WrapperComp";
 import Hero from "./comopnents/Hero";
-import InfiniteScroll from "./comopnents/InfiniteScroll";
 import AboutMe from "./comopnents/AboutMe";
 import ContactComp from "../../global/components/ContactComp";
+import InfiniteScrollComp from "../../global/components/InfiniteScrollComp";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <WrapperComp>
         <Hero />
       </WrapperComp>
-      <InfiniteScroll />
+      <InfiniteScrollComp />
       <WrapperComp>
         <AboutMe />
         <ContactComp />
