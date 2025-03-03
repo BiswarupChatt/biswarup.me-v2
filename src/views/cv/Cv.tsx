@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import pdfCv from "../../assets/cv/Biswarup-curriculum-vitae.pdf";
