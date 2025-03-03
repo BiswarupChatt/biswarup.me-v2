@@ -44,7 +44,7 @@ function App() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              pt: 12,
+              pt: 5,
               backgroundColor: (theme) => theme.palette.background.paper,
             }}
           >

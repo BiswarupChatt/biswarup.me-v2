@@ -112,7 +112,7 @@ const ProjectShowcase: React.FC = () => {
               <Box sx={{ display: "flex", gap: 1 }}>
                 {project.codeLink && (
                   <ButtonComp
-                    variant="contained"
+                    variant="outlined"
                     href={project.codeLink}
                     target="_blank"
                     size="small"
@@ -122,7 +122,7 @@ const ProjectShowcase: React.FC = () => {
                 )}
                 {project.backendCodeLink && (
                   <ButtonComp
-                    variant="contained"
+                    variant="outlined"
                     href={project.backendCodeLink}
                     target="_blank"
                     size="small"

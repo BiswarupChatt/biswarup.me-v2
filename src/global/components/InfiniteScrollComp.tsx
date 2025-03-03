@@ -59,6 +59,7 @@ const TechCard: React.FC<{ item: TechItem }> = ({ item }) => (
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      flexWrap: "nowrap",
       fontSize: "14px",
       cursor: "pointer",
       transition: "transform 0.2s",
@@ -82,15 +83,36 @@ const InfiniteScrollComp: React.FC = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000,
-    slidesToShow: 5,
+    speed: 3000, // Duration of the animation in milliseconds (controls overall smoothness)
+    slidesToShow: 5, // Base number of slides (adjusted by responsive)
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: "linear",
+    autoplaySpeed: 0, // Set to 0 for continuous scrolling
+    cssEase: "linear", // Linear easing for constant speed
     pauseOnHover: false,
     arrows: false,
-    variableWidth: true,
+    variableWidth: true, // Allows cards to maintain their natural width
+    centerMode: true, // Helps with smooth looping
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (

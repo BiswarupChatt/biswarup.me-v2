@@ -5,6 +5,7 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["node", "react", "react-slick"]
+    "types": ["node", "react", "react-slick"],
+    "lib": ["dom", "dom.iterable", "esnext"],
   }
 }

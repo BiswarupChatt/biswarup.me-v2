@@ -12,7 +12,6 @@ export default function Hero() {
         fontWeight="bold"
         textAlign="left"
         sx={{
-          fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3rem" },
           width: { xs: "100%", md: "80%" },
         }}
       >
