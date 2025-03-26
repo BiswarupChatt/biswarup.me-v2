@@ -10,22 +10,23 @@ import {
   TimelineOppositeContent,
 } from "@mui/lab";
 import WorkIcon from "@mui/icons-material/Work";
-import SchoolIcon from "@mui/icons-material/School";
 import CodeIcon from "@mui/icons-material/Code";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
-import EngineeringIcon from "@mui/icons-material/Engineering";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import CoPresentIcon from '@mui/icons-material/CoPresent';
 
 // Icon map for dynamic rendering
 const iconMap: Record<string, JSX.Element> = {
-  work: <WorkIcon />,
-  school: <SchoolIcon />,
+  terminal: <TerminalIcon />,
   code: <CodeIcon />,
-  design: <DesignServicesIcon />,
-  developer: <EngineeringIcon />,
   learning: <AutoStoriesIcon />,
+  design: <DesignServicesIcon />,
+  trendingUp: <TrendingUpIcon />,
+  creativeHead: <CoPresentIcon />,
 };
 
 export default function Experience() {
@@ -33,12 +34,20 @@ export default function Experience() {
 
   const experiences = [
     {
+      title: "React Js Developer",
+      company: "RedoQ Software Services Pvt. Ltd.",
+      date: "March 2025 (Currently Working)",
+      description:
+        "Solving complex development challenges by designing scalable, high-performance web applications.",
+      icon: "terminal",
+    },
+    {
       title: "Full Stack Developer",
       company: "Hovsol Technologies Pvt. Ltd.",
-      date: "Oct 2023 - March 2024 (6 mos)",
+      date: "Oct 2024 - March 2025 (6 mos)",
       description:
         "Developed and maintained scalable SaaS and CRM applications using the MERN stack. Collaborated on both client projects and in-house applications.",
-      icon: "developer",
+      icon: "code",
     },
     {
       title: "Internship",
@@ -54,7 +63,7 @@ export default function Experience() {
       date: "Dec 2023 - September 2024 (10 mos)",
       description:
         "Transitioned from graphic design to full-stack development. Enhanced coding skills, learned advanced React, Node.js, and modern web frameworks.",
-      icon: "learning",
+      icon: "trendingUp",
     },
     {
       title: "Graphic Designer",
@@ -70,7 +79,7 @@ export default function Experience() {
       date: "2019 - April 2024 (5 yrs 4 mos)",
       description:
         "Led the creative vision, branding, and design strategy. Oversaw all aspects of visual identity, digital media, and product design.",
-      icon: "work",
+      icon: "creativeHead",
     },
   ];
 

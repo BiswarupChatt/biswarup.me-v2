@@ -24,7 +24,7 @@ export default function Hero() {
         >
           Take Care of Your{" "}
         </Box>
-        Websites
+        Web Apps
       </Typography>
       <Typography
         variant="h6"

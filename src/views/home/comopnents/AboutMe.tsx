@@ -27,13 +27,17 @@ export default function AboutMe() {
           About Me
         </Typography>
       </Box>
-      <Typography variant="h6" textAlign="justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-        consectetur laudantium eveniet beatae eum doloremque iure libero nemo,
-        magnam ea earum asperiores repellat, quisquam expedita dicta. Blanditiis
-        maxime delectus vero! laudantium eveniet beatae eum doloremque iure
-        libero nemo, magnam ea earum asperiores repellat, quisquam expedita
-        dicta. Blanditiis maxime delectus vero!
+      <Typography
+        variant="h6"
+        sx={{
+          textAlign: "justify",
+          // fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
+        }}
+      >
+        While working as a freelance graphic designer, I started wondering about
+        more than just how things looked—I wanted to understand how they
+        actually worked. This curiosity led me to explore coding and building
+        interactive experiences.
       </Typography>
       <Box sx={{ mx: "auto", mt: 2 }}>
         <ButtonComp variant="outlined" onClick={() => navigate("/about")}>
