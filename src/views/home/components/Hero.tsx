@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ButtonComp from "../../../global/components/ButtonComp";
 
 export default function Hero() {
-  const navitage = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <Box sx={{ mb: 4 }}>
@@ -49,7 +49,7 @@ export default function Hero() {
         <ButtonComp
           variant="outlined"
           sx={{ minWidth: "150px" }}
-          onClick={() => navitage("/cv")}
+          onClick={() => navigate("/cv")}
         >
           My CV
         </ButtonComp>

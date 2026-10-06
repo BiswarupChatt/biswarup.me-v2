@@ -1,6 +1,6 @@
 import WrapperComp from "../../global/components/WrapperComp";
-import Hero from "./comopnents/Hero";
-import AboutMe from "./comopnents/AboutMe";
+import Hero from "./components/Hero";
+import AboutMe from "./components/AboutMe";
 import ContactComp from "../../global/components/ContactComp";
 import InfiniteScrollComp from "../../global/components/InfiniteScrollComp";
 

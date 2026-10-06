@@ -10,7 +10,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-interface ButtonCompProps extends ButtonProps {
+interface ButtonCompProps {
   children: ReactNode;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
@@ -19,7 +19,15 @@ interface ButtonCompProps extends ButtonProps {
   tooltip?: string;
   fullWidth?: boolean;
   testId?: string;
+  href?: string;
   target?: string;
+  rel?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  size?: ButtonProps["size"];
+  sx?: ButtonProps["sx"];
+  disabled?: boolean;
+  color?: ButtonProps["color"];
+  type?: ButtonProps["type"];
   variant?: "contained" | "outlined" | "text";
   disabledStyle?: React.CSSProperties;
   borderRadius?: string;
@@ -41,8 +49,9 @@ const ButtonComp: React.FC<ButtonCompProps> = ({
   borderRadius = "20px",
   ...rest
 }) => {
+  const { href, rel, onClick, ...buttonRest } = rest;
   const combinedSx = {
-    ...(rest.disabled && disabledStyle ? disabledStyle : {}),
+    ...(buttonRest.disabled && disabledStyle ? disabledStyle : {}),
     borderRadius,
     height: "40px",
     boxShadow: "none",
@@ -77,15 +86,37 @@ const ButtonComp: React.FC<ButtonCompProps> = ({
     </>
   );
 
+  const commonButtonProps = {
+    variant,
+    disabled: isLoading || buttonRest.disabled,
+    fullWidth,
+    sx: combinedSx,
+    "data-testid": testId,
+  };
+
+  if (href) {
+    return (
+      <Tooltip title={tooltip || ""} arrow>
+        <Button
+          href={href}
+          target={target}
+          rel={target === "_blank" ? "noopener noreferrer" : rel}
+          onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
+          {...buttonRest}
+          {...commonButtonProps}
+        >
+          {buttonContent}
+        </Button>
+      </Tooltip>
+    );
+  }
+
   return (
     <Tooltip title={tooltip || ""} arrow>
       <Button
-        variant={variant}
-        disabled={isLoading || rest.disabled}
-        fullWidth={fullWidth}
-        sx={combinedSx}
-        data-testid={testId}
-        {...rest}
+        onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
+        {...buttonRest}
+        {...commonButtonProps}
       >
         {buttonContent}
       </Button>

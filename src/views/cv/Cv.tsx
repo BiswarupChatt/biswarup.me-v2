@@ -8,7 +8,7 @@ export default function Cv() {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = pdfCv;
-    link.download = "Biswarup_Chatterjee_CV.pdf"; 
+    link.download = "Biswarup_Chatterjee_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -25,27 +25,27 @@ export default function Cv() {
           color: (theme) => theme.palette.custom.blue.main,
         }}
       >
-        Curriculam Vitae
+        Curriculum Vitae
       </Typography>
 
       <Box
         sx={{
-          width: "100%", 
-          maxWidth: "750px", 
+          width: "100%",
+          maxWidth: "750px",
           mb: 3,
           mx: "auto",
           border: "1px solid #e0e0e0",
           borderRadius: 1,
-          overflow: "hidden", 
+          overflow: "hidden",
         }}
       >
         <img
-          src={jpgCv} 
+          src={jpgCv}
           alt="My CV"
           style={{
-            width: "100%", 
-            height: "auto", 
-            display: "block", 
+            width: "100%",
+            height: "auto",
+            display: "block",
           }}
         />
       </Box>
